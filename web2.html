@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vertical Layout with Navbar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f3f3f3;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li {
+      margin-left: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: #28a745;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #To-Do button {
+      background-color: red;
+    }
+
+    #To-Do button:hover {
+      background-color: darkred;
+    }
+
+    #taskList li {
+      list-style-type: none;
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+
+    #galleryContainer img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h1>My Web App</h1>
+    <ul>
+      <li><a href="#form">Contact</a></li>
+      <li><a href="#To-Do">To-Do</a></li>
+      <li><a href="#Image">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="form" class="section">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+      <label>Name:</label>
+      <input type="text" id="name" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Message:</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- To-Do Section -->
+  <section id="To-Do" class="section">
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Add a new task" />
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section id="Image" class="section">
+    <h2>Image Gallery</h2>
+    <input type="text" id="imageURL" placeholder="Enter image URL" />
+    <button onclick="addImage()">Add Image</button>
+    <div id="galleryContainer"></div>
+  </section>
+
+  <script>
+    function validateForm() {
+      alert("Form submitted!");
+      return false; // Prevent actual submission
+    }
+
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const task = taskInput.value.trim();
+      if (task !== "") {
+        const li = document.createElement("li");
+        li.textContent = task;
+        document.getElementById("taskList").appendChild(li);
+        taskInput.value = "";
+      }
+    }
+
+    function addImage() {
+      const url = document.getElementById("imageURL").value.trim();
+      if (url) {
+        const img = document.createElement("img");
+        img.src = url;
+        document.getElementById("galleryContainer").appendChild(img);
+        document.getElementById("imageURL").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
