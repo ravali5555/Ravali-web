@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Web Project</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="todo.html">To-Do List</a>
+      <a href="products.html">Product List</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I am a web developer passionate about building user-friendly websites and apps.</p>
+
+    <h2>Projects</h2>
+    <ul>
+      <li>To-Do List App with Local Storage</li>
+      <li>Product Listing Page with Filter & Sort</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <form id="contactForm" onsubmit="return validateForm(event)">
+      <input type="text" id="name" placeholder="Your Name" />
+      <input type="email" id="email" placeholder="Your Email" />
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="form.js"></script>
+</body>
+</html>

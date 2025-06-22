@@ -1,0 +1,195 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, orange,pink, rgb(87, 153, 233));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header styles */
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #ffffff33;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Section layout (glassmorphism) */
+section {
+  max-width: 960px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ffffff22;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Form styles */
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form button {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(91, 134, 229, 0.4);
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #5b86e5, #36d1dc);
+}
+
+/* To-Do Inputs and Buttons */
+.todo input {
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 8px 10px 0;
+  font-size: 1rem;
+}
+
+.todo button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  box-shadow: 0 5px 15px rgba(221, 36, 118, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.todo button:hover {
+  background: linear-gradient(to right, #dd2476, #ff512f);
+  transform: translateY(-2px);
+}
+
+/* Task List */
+.todo ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.todo li {
+  background: linear-gradient(to right, #fc5c7d, #6a82fb);
+  color: white;
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo li button {
+  background: #ff4e50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todo li button:hover {
+  background: #c0392b;
+}
+
+/* Product Container */
+#productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product {
+  width: 240px;
+  background: linear-gradient(to right, #00b3ff, rgb(78, 241, 78));
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+}
+
+/* Dropdowns */
+select {
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
